@@ -10,6 +10,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary : "#81a78a",
+        letra : "#111d15",
       },
     },
   },
