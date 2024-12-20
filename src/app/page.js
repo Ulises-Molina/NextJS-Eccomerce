@@ -27,7 +27,7 @@ export default function Home() {
     <>
     <Header/>
     <Portada/>
-    <div className="grid grid-cols-6 gap-6 mx-20 font-mono mt-32 mb-32">
+    <div className="grid lg:grid-cols-6 grid-cols-1 gap-1 mx-20 mt-32 mb-32">
     { productosFiltrados.length > 0 ? productosFiltrados.map((producto) => (
       <Card
         key={producto.id}

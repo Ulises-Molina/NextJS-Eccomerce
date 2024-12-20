@@ -11,7 +11,7 @@ export const Card = ({title, price,image , originalPrice,id}) => {
     return (
         <>
             <Link href={`/productos/${id}`}>
-            <div className='flex flex-col justify-between gap-3 p-2 items-center max-h-72 h-72 bg-white border text-letra border-gray-100 rounded-lg shadow-md group hover:cursor-pointer'>
+            <div className='flex flex-col min-w-40 justify-between gap-3 p-2 items-center max-h-72 h-72 bg-white border text-letra border-gray-100 rounded-lg shadow-md group hover:cursor-pointer'>
                 <h2 className='text-sm line-clamp-1 text-center'>{title}</h2>
                 <div className='h-1/2'><img className='h-full w-full object-contain group-hover:scale-105' src={image}></img></div>
                 <div>
