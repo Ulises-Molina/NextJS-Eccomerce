@@ -7,6 +7,7 @@ export const ProductosProvider = ({children}) => {
 
     const [productos, setProductos] = useState([]);
     const [busqueda, setBusqueda] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
         const handleChange = (e) => {
             const value = e.target.value;
@@ -14,9 +15,16 @@ export const ProductosProvider = ({children}) => {
         }            
     
         const obtenerProductos = async () => {
-        const res = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=deporte");
-        const data = await res.json();
-        setProductos(data.results);
+            try {
+                const res = await fetch("/api.json");
+                const data = await res.json();
+                setProductos(data);
+                console.log(data);
+            } catch (err) {
+                console.error("Error al obtener productos:", err);
+            } finally {
+                setIsLoading(false);
+            }
         };
     
     
@@ -25,7 +33,7 @@ export const ProductosProvider = ({children}) => {
         }, []);
 
     return (
-        <ProductosContext.Provider value={{productos, setProductos, handleChange, busqueda}}>
+        <ProductosContext.Provider value={{productos, setProductos, handleChange, busqueda, isLoading}}>
             {children}
         </ProductosContext.Provider>
     )

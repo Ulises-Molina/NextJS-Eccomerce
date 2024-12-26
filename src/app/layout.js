@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ProductosProvider } from "@/context/ProductosProvider";
+import { CarritoProvider } from "@/context/CarritoProvider";
 import { Montserrat } from 'next/font/google'
 
 
@@ -16,11 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ProductosProvider>
+    <CarritoProvider> 
     <html lang="en" className={geist.className}>
     <body className={`font-montserrat ${geist.className}`}>
         {children}
       </body>
     </html>
+    </CarritoProvider>
     </ProductosProvider>
   );
 }
