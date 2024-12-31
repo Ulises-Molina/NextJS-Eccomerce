@@ -11,6 +11,7 @@ export const authOptions = {
                 email: { label: "Email", type: "email", placeholder: "example@gmail.com" },
                 password: { label: "Password", type: "password", placeholder: "********" },
             },
+            secret: process.env.NEXTAUTH_SECRET,
             async authorize(credentials,req){
                 
                 const userFound = await db.user.findUnique({where: {email: credentials.email}})
