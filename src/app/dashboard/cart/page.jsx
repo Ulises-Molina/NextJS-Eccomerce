@@ -13,14 +13,14 @@ export default function Cart() {
     const priceTaxes = 2.50;
 
     return (
-        <main id="gradient" className="h-screen w-screen flex justify-evenly pt-40">
-            <Link className='absolute top-10 left-10' href={"/"}><KeyboardArrowLeftIcon sx={{ fontSize: 50 }}/></Link>
+        <main id="gradient" className="h-screen w-screen min-w-96 flex flex-col gap-20 lg:flex-row justify-start items-center lg:justify-evenly lg:items-start p-20">
+            <Link className='absolute top-10 left-10' href={"/dashboard"}><KeyboardArrowLeftIcon sx={{ fontSize: 50 }}/></Link>
         <div className="flex flex-col bg-white h-fit rounded-md shadow-lg gap-2">
         {cart.length > 0 ? cart.map((producto) => 
             <CardCart key={producto.id} imagen={producto.image} title={producto.title} id={producto.id} price={producto.price} deleteCart={deleteCart}/>):
             <p className="font-bold text-lg px-20">Your cart is empty</p>}
         </div>
-        <div className="flex flex-col bg-white w-fit h-fit gap-3 py-5 rounded-md shadow-lg">
+        <div className="flex flex-col bg-white w-fit h-fit gap-3 py-5 rounded-md shadow-lg self-center">
             <p className="font-bold text-lg px-20">Purchase summary</p>
             <div className="flex flex-row justify-between px-4">
                 <p>Products ({cart.length})</p>

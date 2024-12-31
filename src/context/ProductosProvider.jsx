@@ -19,7 +19,6 @@ export const ProductosProvider = ({children}) => {
                 const res = await fetch("/api.json");
                 const data = await res.json();
                 setProductos(data);
-                console.log(data);
             } catch (err) {
                 console.error("Error al obtener productos:", err);
             } finally {
